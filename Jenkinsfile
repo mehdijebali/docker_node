@@ -5,7 +5,7 @@ pipeline{
 
         }
         stage('build'){
-            app = docker.build("saifromdhane/nodeserver")
+            docker.build("saifromdhane/nodeserver")
             docker.withRegistry('https://registry.hub.docker.com', 'git') {            
                 app.push("${env.BUILD_NUMBER}")            
                 app.push("latest")        
