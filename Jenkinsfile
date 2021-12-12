@@ -15,7 +15,9 @@ pipeline{
 //             }    
 //         }
         stage("post-build"){
-            sh 'echo "build success"'
+            steps{
+                sh 'echo "build success"'
+            }
         }
     }
 }
