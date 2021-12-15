@@ -1,8 +1,9 @@
 pipeline{
-    agent any
+    agent { dockerfile true }
     stages{
         stage("pre-build"){
             steps{
+                sh 'docker --version'
                 sh 'npm install'
             }
         }
